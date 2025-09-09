@@ -59,7 +59,7 @@ async def get_logs():
 
 @app.get("/version", response_class=JSONResponse)
 async def get_version():
-    return {"version": "1.0.0"}
+    return {"version": "0.0.1.a"}
 
 @app.get("/metrics", response_class=JSONResponse)
 async def get_metrics():
