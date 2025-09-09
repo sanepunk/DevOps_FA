@@ -60,6 +60,18 @@ async def get_logs():
 @app.get("/version", response_class=JSONResponse)
 async def get_version():
     return {"version": "0.0.1.b"}
+    return {"version": "0.0.1.a"}
+
+@app.get("/metrics", response_class=JSONResponse)
+async def get_metrics():
+    try:
+        with open(os.path.join(path, "logs/events.log"), "r") as log_file:
+            log_count = len(log_file.readlines())
+        return {"event_count": log_count}
+    except FileNotFoundError:
+        return {"event_count": 0}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
