@@ -75,9 +75,9 @@ async def get_metrics():
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
-@app.get("/echo/{message}", response_class=JSONResponse)
-async def echo_message(message: str):
-    return {"message": message}
+@app.get("/echo/{messages}", response_class=JSONResponse)
+async def echo_message(messages: str):
+    return {"messages": messages}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
