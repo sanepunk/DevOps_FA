@@ -59,6 +59,8 @@ async def get_logs():
 
 @app.get("/version", response_class=JSONResponse)
 async def get_version():
+    print(f'version endpoint hit, returning 0.0.1.b')
+    print(3)
     return {"version": "0.0.1.b"}
     return {"version": "0.0.1.a"}
 
