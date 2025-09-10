@@ -3,3 +3,8 @@
 
 # But do not ignore main.py
 !main.py
+!build.sh
+!scripts.sh
+!test.sh
+!production.sh
+!Jenkinsfile
