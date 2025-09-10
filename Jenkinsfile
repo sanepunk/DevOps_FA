@@ -27,11 +27,6 @@ pipeline {
                     ./test.sh
                 '''
             }
-            post {
-                always {
-                    junit '**/test-reports/*.xml'
-                }
-            }
         }
 
         stage('Deploy to Production') {
